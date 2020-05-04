@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{-- <link rel="stylesheet" href="{{asset(css/app.css)}}"> --}}
+<link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <title>{{config('app.config','Blog')}}</title>
+</head>
+<body class="bg-gray-200">
+    
+    @include('inc.navbar')
+    <div class="container mx-auto">
+        @include('inc.messages')
+    </div>
+    
+    @yield('content')
+
+ <script src="https://cdn.ckeditor.com/ckeditor5/16.0.0/classic/ckeditor.js"></script>
+<script>
+    ClassicEditor
+    .create(document.querySelector('#editor'))
+    .catch(error=>{
+        console.error(error);
+    });                                             
+</script>
+
+
+
+</body>
+</html>
